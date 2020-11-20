@@ -50,6 +50,11 @@ export PYTHONPATH=./:$PYTHONPATH
 通过tools/download.py下载所需要的预训练模型。
 
 ```bash
+vim tools/download.py
+把27行 from ppcls import model_zoo 修改为 from ppcls. import model_zoo，否则会找不到模块model_zoo
+```bash
+
+```bash
 python tools/download.py -a ResNet50_vd -p ./pretrained -d True
 python tools/download.py -a ResNet50_vd_ssld -p ./pretrained -d True
 python tools/download.py -a MobileNetV3_large_x1_0 -p ./pretrained -d True
